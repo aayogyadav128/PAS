@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const { Pool,Client } = require('pg')
 
 
-
+//////////////enter postgresql credential here
  const client = new Client({
    user: 'DBUser',
    host: 'DBHost',
