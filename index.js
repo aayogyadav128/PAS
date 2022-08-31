@@ -1,5 +1,4 @@
 //jshint esversion:6
-require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool,Client } = require('pg')
@@ -7,11 +6,11 @@ const { Pool,Client } = require('pg')
 
 
  const client = new Client({
-   user: 'postgres',
-   host: '192.168.1.251',
-   database: 'pes',
-   password: 'aqitumantu1',
-   port: 5432,
+   user: 'DBUser',
+   host: 'DBHost',
+   database: 'ReplaceWithDBName',
+   password: 'DBPassword',
+   port: DBPort,
  })
 
 client.connect(function(err) {
@@ -33,16 +32,8 @@ app.get("/", function(req,res){
 ////liste on /show to show all datas
 
 app.get("/show", function(req,res){
-  const nam1=['Raj'];
-  const nam2=['Aayog'];
-  const nam3=['Vipin'];
-
-  var adata;
-  var rdata;
-  var vdata;
-  var tdata;
-
-///total expense data
+ ///total expense data
+ var tdata;
   client.query('SELECT SUM(cost) FROM  "ExpenseList";',(err,result)=>{
     if (err){
       console.log(err.stack);
@@ -51,9 +42,10 @@ app.get("/show", function(req,res){
       console.log(tdata);
     }
   })
-
-///expense data of person 1
-  client.query('SELECT SUM(cost) FROM  "ExpenseList" where person=$1;',nam1,(err,result)=>{
+ //-------------copy from here to add another person----------
+ const nam1=['_Name1'];
+ var _Name1;
+ client.query('SELECT SUM(cost) FROM  "ExpenseList" where person=$1;',nam1,(err,result)=>{
     if (err){
       console.log(err.stack);
     }else{
@@ -61,26 +53,9 @@ app.get("/show", function(req,res){
       console.log(rdata);
     }
   })
+ //----------copy till here to add another person--------------
 
-////expense data of person 2
-  client.query('SELECT SUM(cost) FROM  "ExpenseList" where person=$1;',nam2,(err,result)=>{
-    if (err){
-      console.log(err.stack);
-    }else{
-      adata = result.rows[0];
-      console.log(result.rows);
-    }
-  })
 
-/// expense data of person 3
-  client.query('SELECT SUM(cost) FROM  "ExpenseList" where person=$1;',nam3,(err,result)=>{
-    if (err){
-      console.log(err.stack);
-    }else{
-      vdata = result.rows[0];
-      console.log(result.rows);
-    }
-  })
 
 ///show everything from expense list and render main file
 
