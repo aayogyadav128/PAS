@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>body {
+        display: block;
+        text-align: center;
+    }
+    
+    form {
+    
+        padding: 70px 20px;
+    }
+    
+    .card {
+        display: inline-block;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+        /* 5px rounded corners */
+        width: fit-content;
+    }
+    
+    .pat {
+        background-color: #ffffff;
+        opacity: 1;
+        background-image: radial-gradient(#7145f7 1.9000000000000001px, transparent 1.9000000000000001px), radial-gradient(#7145f7 1.9000000000000001px, #ffffff 1.9000000000000001px);
+        background-size: 76px 76px;
+        background-position: 0 0, 38px 38px;
+    }</style>
+</head>
+
+<body>
+    <div class="pat">
+        <h1>PES</h1>
+        <div class="card">
+
+
+            <div class="main">
+
+                <form  id="mainForm" action="/" method="post">
+                    <label for="cost">How much:</label><br>
+                    <input id="cost" name="cost" type="number"><br><br>
+                    <label for="item">Item :</label><br>
+                    <input id="item" name="item" type="text"><br><br>
+                    <label for="Person">Who :</label><br>
+                    <input id="Person" name="person" list="Persons">
+                    <datalist id="Persons">
+                        <option value="Aayog"></option>
+                        <option value="Raj"></option>
+                        <option value="Vipin"></option>
+                    </datalist><br><br>
+                    <input type="submit"><br><br>
+                    <a href="https://www.google.com">want to enter multiple item at once?</a><br>
+                    <a href="http://localhost:3000/show">Show Expenses</a>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
