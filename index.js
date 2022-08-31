@@ -3,7 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { Pool,Client } = require('pg')
 
-
 //////////////enter postgresql credential here
  const client = new Client({
    user: 'DBUser',
@@ -29,7 +28,7 @@ app.get("/", function(req,res){
 })
 
 
-////liste on /show to show all datas
+////listen on /show to show all datas
 
 app.get("/show", function(req,res){
  ///total expense data
