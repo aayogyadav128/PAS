@@ -21,6 +21,8 @@
             <th>Person</th>
             <th>Cost</th>
             <th>Item</th>
+            <th>Date</th>
+            <th>Time</th>
         </tr>
 
         <% dat.data.forEach(function(dat) { %>
@@ -33,6 +35,12 @@
                 </td>
                 <td>
                     <%= dat.item%>
+                </td>
+                <td>
+                    <%= dat.date%>
+                </td>
+                <td>
+                    <%= dat.time%>
                 </td>
             </tr>
             <% }); %>
