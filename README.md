@@ -5,10 +5,10 @@ Here are the steps to Run this application on your device
 
 1. Create a postgresql database.
 2. Make a Table and name it as "ExpenseList".
-3. Add 3 Columns and name it as "person","cost" and "item" .
+3. Add 3 Columns and name it as "person","cost", "item","date" and "time" .
 4. clone  this repository by "$git clone https://github.com/aayogyadav128/Pes.git"
 5. In "index.js" :
-5.1 Enter your correct postgres cridentials (Replace  'DBUser','DBHost','ReplaceWithDBName', 'DBPassword',DBPort with Your real Credentials).
+5.1 Enter your correct postgres credentials (Replace  'DBUser','DBHost','ReplaceWithDBName', 'DBPassword',DBPort with Your real Credentials).
 5.2 To add person copy person lines (line 44 to 55) and paste just below that and replace "_Name" with real person name in data base, Repeat process for all Persons.
 6. In "entry.ejs":
 6.1.  Copy line 57 and paste it just below that and replace "_Name" with real name in database. Repeat Process for every person in Database.
