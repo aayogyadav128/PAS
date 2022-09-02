@@ -79,7 +79,6 @@ app.post("/", function(req,res){
         console.log(err.stack)
       } else {
         console.log(res.rows[0]);
-        client.end();
       }
     })
 })
