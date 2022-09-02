@@ -72,9 +72,20 @@ app.get("/show", function(req,res){
 //posting data from form to database
 
 app.post("/", function(req,res){
+ 
+    /////date time thing..
+    let date_ob = new Date();
+    let date = ("0" + date_ob.getDate()).slice(-2);
+    let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+    let year = date_ob.getFullYear();
+    let hours = date_ob.getHours();
+    let minutes = date_ob.getMinutes();
+    let seconds = date_ob.getSeconds();
+    var daten = (date + "-" + month + "-" + year);
+    var timen = (hours + ":" + minutes + ":" + seconds)
     
     var { person,cost,item } = req.body;
-    client.query('insert into "ExpenseList"(person,cost,item) values($1,$2,$3);', [person,cost,item], (err, res) => {
+    client.query('insert into "ExpenseList"(person,cost,item,data,time) values($1,$2,$3,$4,$5);', [person,cost,item,daten,timen], (err, res) => {
       if (err) {
         console.log(err.stack)
       } else {
